@@ -1,0 +1,747 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="hexo记录," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="1. 思路1234首先hexo是基于Node.js的，所以要安装Node.js.安装Node.js方法很多，我们选择homebrew安装方式，所以要安装homebrew.hexo提交部署github需要使用git工具，所以要安装git，我们用homebrew安装git也很简单.安装顺序：homebrew-&amp;gt;Node.js-&amp;gt;hexo-&amp;gt;git.
+2. 这些要安装的都是什么东西12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac Hexo+github（简单的步骤记录）">
+<meta property="og:url" content="http://yoursite.com/2015/09/08/Mac Hexo+github(简单的步骤记录)/index.html">
+<meta property="og:site_name" content="PA.Blog">
+<meta property="og:description" content="1. 思路1234首先hexo是基于Node.js的，所以要安装Node.js.安装Node.js方法很多，我们选择homebrew安装方式，所以要安装homebrew.hexo提交部署github需要使用git工具，所以要安装git，我们用homebrew安装git也很简单.安装顺序：homebrew-&amp;gt;Node.js-&amp;gt;hexo-&amp;gt;git.
+2. 这些要安装的都是什么东西12">
+<meta property="og:image" content="http://yoursite.com/my_pic/QQ20150929-2@2x.png">
+<meta property="og:image" content="http://yoursite.com/my_pic/QQ20150929-3@2x.png">
+<meta property="og:image" content="http://yoursite.com/my_pic/QQ20150929-1@2x.png">
+<meta property="og:updated_time" content="2015-12-22T10:38:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac Hexo+github（简单的步骤记录）">
+<meta name="twitter:description" content="1. 思路1234首先hexo是基于Node.js的，所以要安装Node.js.安装Node.js方法很多，我们选择homebrew安装方式，所以要安装homebrew.hexo提交部署github需要使用git工具，所以要安装git，我们用homebrew安装git也很简单.安装顺序：homebrew-&amp;gt;Node.js-&amp;gt;hexo-&amp;gt;git.
+2. 这些要安装的都是什么东西12">
+<meta name="twitter:image" content="http://yoursite.com/my_pic/QQ20150929-2@2x.png">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Mac Hexo+github（简单的步骤记录） | PA.Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?92d5c7ba582475c3cfcb953a606c6e15";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">PA.Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'p5VCoSxbJqoi8AHqF3n4','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Mac Hexo+github（简单的步骤记录）
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-08T15:54:05+08:00" content="2015-09-08">
+            2015-09-08
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Hexo/" itemprop="url" rel="index">
+                  <span itemprop="name">Hexo</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/08/Mac Hexo+github(简单的步骤记录)/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/08/Mac Hexo+github(简单的步骤记录)/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="1-思路"><a href="#1-思路" class="headerlink" title="1. 思路"></a><strong>1. 思路</strong></h1><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">首先hexo是基于<span class="keyword">Node</span>.<span class="title">js</span>的，所以要安装<span class="keyword">Node</span>.<span class="title">js</span>.</div><div class="line">安装<span class="keyword">Node</span>.<span class="title">js</span>方法很多，我们选择homebrew安装方式，所以要安装homebrew.</div><div class="line">hexo提交部署github需要使用git工具，所以要安装git，我们用homebrew安装git也很简单.</div><div class="line">安装顺序：homebrew-&gt;<span class="keyword">Node</span>.<span class="title">js-</span>&gt;hexo-&gt;git.</div></pre></td></tr></table></figure>
+<h1 id="2-这些要安装的都是什么东西"><a href="#2-这些要安装的都是什么东西" class="headerlink" title="2. 这些要安装的都是什么东西"></a><strong>2. 这些要安装的都是什么东西</strong></h1><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">homebrew-Mac的套件管理器.</div><div class="line"><span class="keyword">Node</span>.<span class="title">js</span>是一个基于Chrome、 JavaScript运行时建立的平台，用于方便地搭建响应速度快、易于扩展的网络应用.</div><div class="line">hexo是一款基于<span class="keyword">Node</span>.<span class="title">js</span>的静态博客框架.</div><div class="line">git版本控制工具.</div></pre></td></tr></table></figure>
+<h1 id="3-安装-on-Mac"><a href="#3-安装-on-Mac" class="headerlink" title="3. 安装 on Mac"></a><strong>3. 安装 on Mac</strong></h1><h3 id="安装brewhome"><a href="#安装brewhome" class="headerlink" title="安装brewhome."></a>安装brewhome.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>”</span></div></pre></td></tr></table></figure>
+<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p><code>brew install node</code></p>
+<h3 id="安装hexo-用nodejs自带npm安装"><a href="#安装hexo-用nodejs自带npm安装" class="headerlink" title="安装hexo-用nodejs自带npm安装"></a>安装hexo-用nodejs自带npm安装</h3><p><code>npm install -g hexo</code><br><code>hexo init</code><br><code>npm install</code></p>
+<h3 id="安装git-用homebrew安装"><a href="#安装git-用homebrew安装" class="headerlink" title="安装git-用homebrew安装"></a>安装git-用homebrew安装</h3><p><code>sudo brew install git</code></p>
+<h1 id="4-配置"><a href="#4-配置" class="headerlink" title="4. 配置"></a><strong>4. 配置</strong></h1><p><a href="http://papp.life/2015/09/29/SSH%20key%E5%88%A9%E7%94%A8%E5%88%AB%E5%90%8D%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH%20key/" target="_blank" rel="external">多SSHkey/别名配置传送门</a><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">默认<span class="selector-tag">SSH</span> <span class="selector-tag">key</span>已经生成，并且已有<span class="selector-tag">github</span>账号。</div><div class="line">新建仓库<span class="selector-tag">-</span>命名：用户名<span class="selector-class">.github</span><span class="selector-class">.io</span>(必须这样格式)</div><div class="line">修改<span class="selector-tag">hexo</span>根目录下_<span class="selector-tag">config</span><span class="selector-class">.yml</span>文件（<span class="selector-tag">xxxx</span>为你的<span class="selector-tag">github</span>账户名称）</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>deploy:<br>type: git<br>repo: git@github.com:xxxx/xxxx.github.io.git<br>branch: master</p>
+</blockquote>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">配置好这些，下来就是上传到github，需要用到一些命令</div><div class="line">hexo clean <span class="meta">#清除之前的静态文件</span></div><div class="line">hexo generate <span class="meta">#生成新的静态文件</span></div><div class="line">hexo deply <span class="meta">#部署到自己的github</span></div><div class="line"></div><div class="line">hexo <span class="keyword">server</span> <span class="meta">#部署前也可以用这个本地预览</span></div></pre></td></tr></table></figure>
+<h1 id="5-仓库地址访问"><a href="#5-仓库地址访问" class="headerlink" title="5. 仓库地址访问"></a><strong>5. 仓库地址访问</strong></h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">用github仓库地址. eg:fillbirdpa<span class="selector-class">.github</span><span class="selector-class">.io</span></div></pre></td></tr></table></figure>
+<h1 id="6-域名地址访问（域名绑定）"><a href="#6-域名地址访问（域名绑定）" class="headerlink" title="6. 域名地址访问（域名绑定）"></a><strong>6. 域名地址访问（域名绑定）</strong></h1><h2 id="这里用-GoDaddy（申请域名推荐）-DNSPod（域名解析推荐）"><a href="#这里用-GoDaddy（申请域名推荐）-DNSPod（域名解析推荐）" class="headerlink" title="这里用 GoDaddy（申请域名推荐） DNSPod（域名解析推荐）"></a>这里用 GoDaddy（申请域名推荐） DNSPod（域名解析推荐）</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">首先去GoDaddy申请或者买一个域名，这里我的域名是papp<span class="selector-class">.life</span></div><div class="line">然后去DNSPod注册个账号登陆添加域名</div></pre></td></tr></table></figure>
+<h2 id="DNSpod配置"><a href="#DNSpod配置" class="headerlink" title="DNSpod配置"></a>DNSpod配置</h2><blockquote>
+<p>1.这里的下图被马赛克的其实就是github的IP：192.30.252.153，意思就是papp.life域名解析到github的IP，因为我们的博客放在github的仓库。</p>
+</blockquote>
+<p><img src="/my_pic/QQ20150929-2@2x.png" alt="pic1"></p>
+<h2 id="去GoDaddy里面加入DNSpod的记录"><a href="#去GoDaddy里面加入DNSpod的记录" class="headerlink" title="去GoDaddy里面加入DNSpod的记录"></a>去GoDaddy里面加入DNSpod的记录</h2><blockquote>
+<p>2.这边大概的意思就是去我们域名提供商那把我们域名配置用DNSpod解析，再加上上一步github的IP，这样就把域名提供商、DNSpod、github3者的关系建立起来了。(还需要第三步，在仓库加入CNAME文件)</p>
+</blockquote>
+<p><img src="/my_pic/QQ20150929-3@2x.png" alt="pic1"><br>保存<br><img src="/my_pic/QQ20150929-1@2x.png" alt="pic1"></p>
+<h2 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h2><blockquote>
+<p>3.然后还要在我们的blog的git仓库里面放一个CNAME文件。新建一个CNAME文件里面写上域名就行了。（这里最好放在HEXO文件目录下的source文件夹，这样不会每次部署的时候被覆盖，只要配置一次就好了。）</p>
+</blockquote>
+<p>最后等一会，一般可能要几分钟DNS循环下，然后直接访问域名就可以DNS解析到我们原本的仓库地址了</p>
+<h1 id="6-Tips-And-Link"><a href="#6-Tips-And-Link" class="headerlink" title="6. Tips And Link"></a><strong>6. Tips And Link</strong></h1><h3 id="1-hexo-ERROR-Deployer-not-found-github-or-git"><a href="#1-hexo-ERROR-Deployer-not-found-github-or-git" class="headerlink" title="1.hexo ERROR Deployer not found: github  or git"></a>1.hexo ERROR Deployer not found: github  or git</h3><figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">安装 npm install hexo-deployer-git <span class="comment">--save</span></div><div class="line">将deploy 的 <span class="keyword">type</span>由github改为git</div></pre></td></tr></table></figure>
+<h3 id="2-hexo配置Tip"><a href="#2-hexo配置Tip" class="headerlink" title="2.hexo配置Tip"></a>2.hexo配置Tip</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line"><span class="attribute">type</span>: github ##这里要改成git，不要用默认的github。</div><div class="line"><span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:xxxx/xxxx.github.io.git</div><div class="line"><span class="attribute">branch</span>: master</div></pre></td></tr></table></figure>
+<h3 id="3-hexo主题和扩展Link"><a href="#3-hexo主题和扩展Link" class="headerlink" title="3.hexo主题和扩展Link"></a>3.hexo主题和扩展Link</h3><ul>
+<li><p><a href="http://www.tuicool.com/articles/iI77na" target="_blank" rel="external">搭建文章</a></p>
+</li>
+<li><p><a href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" rel="external">hexo主题Next攻略1</a></p>
+</li>
+<li><p><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">Next主题攻略2</a></p>
+</li>
+<li><p><a href="http://yijiebuyi.com/blog/f18d38eb7cfee860c117d629fdb16faf.html" target="_blank" rel="external">多sshkey配置参考</a></p>
+</li>
+<li><p><a href="http://www.jerryfu.net/post/search-engine-for-hexo-with-swiftype-v2.html" target="_blank" rel="external">博客加入swiftype搜索功能</a></p>
+</li>
+<li><p><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">博客加入不蒜子页面统计</a></p>
+</li>
+<li><p><a href="http://blog.fens.me/hexo-blog-github/" target="_blank" rel="external">域名绑定</a></p>
+</li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo记录/" rel="tag">#hexo记录</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/29/SSH key利用别名配置多个SSH key/" rel="prev">SSH key利用别名配置多个SSH key</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/08/test/" rel="next">test pic</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/08/Mac Hexo+github(简单的步骤记录)/"
+     data-title="Mac Hexo+github（简单的步骤记录）"
+     data-content=""
+     data-url="http://yoursite.com/2015/09/08/Mac Hexo+github(简单的步骤记录)/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+            <!-- 多说热评文章-->
+            <p>热评文章</p>
+            <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/08/Mac Hexo+github(简单的步骤记录)/"
+                   data-title="Mac Hexo+github（简单的步骤记录）" data-url="http://yoursite.com/2015/09/08/Mac Hexo+github(简单的步骤记录)/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/my_pic/user.jpeg" alt="PA." itemprop="image"/>
+          <p class="site-author-name" itemprop="name">PA.</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fillbirdpa" target="_blank">github</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-思路"><span class="nav-number">1.</span> <span class="nav-text">1. 思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-这些要安装的都是什么东西"><span class="nav-number">2.</span> <span class="nav-text">2. 这些要安装的都是什么东西</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-安装-on-Mac"><span class="nav-number">3.</span> <span class="nav-text">3. 安装 on Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装brewhome"><span class="nav-number">3.0.1.</span> <span class="nav-text">安装brewhome.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装nodejs"><span class="nav-number">3.0.2.</span> <span class="nav-text">安装nodejs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo-用nodejs自带npm安装"><span class="nav-number">3.0.3.</span> <span class="nav-text">安装hexo-用nodejs自带npm安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git-用homebrew安装"><span class="nav-number">3.0.4.</span> <span class="nav-text">安装git-用homebrew安装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-配置"><span class="nav-number">4.</span> <span class="nav-text">4. 配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-仓库地址访问"><span class="nav-number">5.</span> <span class="nav-text">5. 仓库地址访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-域名地址访问（域名绑定）"><span class="nav-number">6.</span> <span class="nav-text">6. 域名地址访问（域名绑定）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#这里用-GoDaddy（申请域名推荐）-DNSPod（域名解析推荐）"><span class="nav-number">6.1.</span> <span class="nav-text">这里用 GoDaddy（申请域名推荐） DNSPod（域名解析推荐）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNSpod配置"><span class="nav-number">6.2.</span> <span class="nav-text">DNSpod配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去GoDaddy里面加入DNSpod的记录"><span class="nav-number">6.3.</span> <span class="nav-text">去GoDaddy里面加入DNSpod的记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置github"><span class="nav-number">6.4.</span> <span class="nav-text">配置github</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Tips-And-Link"><span class="nav-number">7.</span> <span class="nav-text">6. Tips And Link</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-hexo-ERROR-Deployer-not-found-github-or-git"><span class="nav-number">7.0.1.</span> <span class="nav-text">1.hexo ERROR Deployer not found: github  or git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-hexo配置Tip"><span class="nav-number">7.0.2.</span> <span class="nav-text">2.hexo配置Tip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-hexo主题和扩展Link"><span class="nav-number">7.0.3.</span> <span class="nav-text">3.hexo主题和扩展Link</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PA.</span>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+<div>
+<span id="busuanzi_container_site_pv">
+    共被打<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  参与小伙伴<span id="busuanzi_value_site_uv"></span>人
+</span>
+</div>
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fillbirdpa"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
